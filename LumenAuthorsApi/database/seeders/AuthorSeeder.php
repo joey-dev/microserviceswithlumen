@@ -2,16 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder {
+class AuthorSeeder extends Seeder {
     /**
      * Run the database seeds.
      *
      * @return void
      */
     public function run() {
-        // run the seeder for the authors factory
-        $this->call(AuthorSeeder::class);
+      Author::factory()->count(50)->create();
     }
 }
